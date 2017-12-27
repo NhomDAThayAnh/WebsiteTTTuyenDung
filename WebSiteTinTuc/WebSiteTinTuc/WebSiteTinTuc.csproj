@@ -283,6 +283,9 @@
     </Content>
     <Content Include="Areas\ADMIN\Views\web.config" />
     <Content Include="Areas\ADMIN\Views\QuanLyAD\TrangChuAdmin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Xemtin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Edit.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
