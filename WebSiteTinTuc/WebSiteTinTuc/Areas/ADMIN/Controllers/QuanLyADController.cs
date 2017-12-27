@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebSiteTinTuc.Models;
 
 namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 {
     public class QuanLyADController : Controller
     {
+        TUYENDUNGITEntities td = new TUYENDUNGITEntities();
         // GET: ADMIN/QuanLyAD
         public ActionResult TrangChuAdmin()
         {
@@ -15,8 +17,10 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         public ActionResult Xemtin(FormCollection f)
         {
-            
-            return View();
+            string uutien = f.Get("uutien");
+            Session["uutien"] = uutien;
+            var tt = td.TinTuc.ToList();
+            return View(tt);
         }
         [HttpGet]
         public ActionResult Edit(int IDTT)
