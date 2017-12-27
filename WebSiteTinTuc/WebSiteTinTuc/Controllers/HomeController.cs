@@ -9,10 +9,18 @@ namespace WebSiteTinTuc.Controllers
 {
     public class HomeController : Controller
     {
+<<<<<<< HEAD
         TUYENDUNGITEntities td = new TUYENDUNGITEntities();
+=======
+         TUYENDUNGITEntities6 td = new TUYENDUNGITEntities6();
+      
+>>>>>>> 3bc7c0df065b5bbeb30ab78c7d37eb997c76d2e8
         public ActionResult TrangChu() {
-            return View();
+            var tt = td.TinTucTuyenDung.ToList();
+            ViewBag.CanhBao = "Bạn phải đăng nhập mới có thể nộp đơn";
+            return View(tt);
         }
-       
+
+        
     }
 }
