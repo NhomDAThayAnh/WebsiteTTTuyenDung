@@ -200,6 +200,7 @@
     <Compile Include="Areas\ADMIN\ADMINAreaRegistration.cs" />
     <Compile Include="Areas\ADMIN\Controllers\QuanLyADController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CongTiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -340,6 +341,9 @@
     <Content Include="Views\Account\DangNhap.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\TrangNopDon.cshtml" />
+    <Content Include="Views\CongTi\TrangChuCongTy.cshtml" />
+    <Content Include="Views\Shared\_layoutCongTy.cshtml" />
+    <Content Include="Views\CongTi\Tintuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

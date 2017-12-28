@@ -1,39 +1,32 @@
-using DAWEB.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebSiteTinTuc.Models;
 
-namespace DAWEB.Controllers
+namespace WebSiteTinTuc.Controllers
 {
-    public class CongTyController : Controller
+    public class CongTiController : Controller
     {
-        TUYENDUNGITEntities6 td = new TUYENDUNGITEntities6();
+        // GET: CongTi
+        TUYENDUNGITEntities td = new TUYENDUNGITEntities();
         // GET: CongTy
-        public ActionResult TrangChuCongTy() {
-            return View();
-        }
-        public ActionResult DanhSachNguoiNop()
+        public ActionResult TrangChuCongTy()
         {
-            string id = Session["Tenct"].ToString();
-            var nd = td.NOPDON.Where(x=>x.CongTy==id).ToList();
-
-            //var ds = from c in td.DANHSACHDON
-            //         where c.TenCT == id
-            //         select c;
-            //return View(ds);
-            return View(nd);
-        }
-
-        [HttpGet]
-        public ActionResult Tintuc() {
             return View();
         }
-        
+        [HttpGet]
+
+        public ActionResult Tintuc()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult Tintuc(TinTuc tt , FormCollection f)
+
+        public ActionResult Tintuc(TinTuc tt, FormCollection f)
         {
             foreach (string fileUpload in Request.Files)
             {
@@ -47,7 +40,7 @@ namespace DAWEB.Controllers
                 if (ModelState.IsValid)
                 {
                     var FileName = Path.GetFileName(fileupload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/images/"), FileName );
+                    var path = Path.Combine(Server.MapPath("~/images/"), FileName);
                     //Kiem tra Hinh Anh da ton tai chưa
                     if (System.IO.File.Exists(path))
                     {
@@ -60,15 +53,19 @@ namespace DAWEB.Controllers
 
                 }
             }
-           
+            tt.TenCT = f["tenct"];
+            tt.Khuvuc = f["khuvuc"];
+            tt.Mucluong = f["mucluong"];
+            tt.Thoihan = DateTime.Parse(f["thoihan"]);
+            tt.Vitri = f["vitri"];
             tt.NgayGui = DateTime.Now;
             tt.Hinhanh = f["fileUpload"];
-            
-                td.TinTuc.Add(tt);
+            tt.Yeucau = f["yeucau"];
+            td.TinTuc.Add(tt);
             td.SaveChanges();
 
             return RedirectToAction("TrangChuCongTy", "CongTy");
         }
-       
+
     }
 }
