@@ -14,9 +14,7 @@ namespace WebSiteTinTuc.Controllers
       
 
         public ActionResult TrangChu() {
-            var tt = td.TinTucTuyenDung.ToList();
-            ViewBag.CanhBao = "Bạn phải đăng nhập mới có thể nộp đơn";
-            return View(tt);
+            return View();
         }
 
         

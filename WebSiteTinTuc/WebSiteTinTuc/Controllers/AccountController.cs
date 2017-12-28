@@ -12,12 +12,11 @@ using WebSiteTinTuc.Models;
 
 namespace WebSiteTinTuc.Controllers
 {
-    [Authorize]
+  
     public class AccountController : Controller
     {
         TUYENDUNGITEntities td = new TUYENDUNGITEntities();
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+
 
         public ActionResult DangKy()
         {

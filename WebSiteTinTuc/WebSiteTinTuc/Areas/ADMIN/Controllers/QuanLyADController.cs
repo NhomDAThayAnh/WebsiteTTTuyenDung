@@ -23,27 +23,63 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             return View(tt);
         }
         [HttpGet]
+ 
+        [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int IDTT)
         {
-          
+            TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
 
-            return View();
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+            return View(tt);
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit()
+        public ActionResult Edit(TinTuc tt)
         {
-            return View();
+
+            if (ModelState.IsValid)
+            {
+                //Thực hiện cập nhạp trong Model
+                td.Entry(tt).State = System.Data.Entity.EntityState.Modified;
+                td.SaveChanges();
+            }
+
+            return Redirect("~/ADMIN/QuanLyAD/Xemtin");
         }
         [HttpGet]
         public ActionResult Delete(int IDTT)
         {
-            return View();
+            //Lấy Đối tượng sách theo mã
+            TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
+
+
+
+
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(tt);
         }
         [HttpPost, ActionName("Delete")]
         public ActionResult XacNhanXoa(int IDTT)
         {
-            return View();
+            TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            td.TinTuc.Remove(tt);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/Xemtin");
 
         }
 
@@ -163,8 +199,8 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpPost]
         public ActionResult ThemTaiKhoanCongTy(CONGTY ct)
         {
-      
-            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
+
+            return View();
         }
 
         [HttpGet]
@@ -204,26 +240,25 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
            
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
         }
-        public ActionResult DanhSachNopDon()
-        {
+        //public ActionResult DanhSachNopDon()
+        //{
            
-            return View(ds);
-        }
+        //    return View(ds);
+        //}
 
-        [HttpGet]
-        public ActionResult EditDonNguoiDung(int IDND)
-        {
+        //[HttpGet]
+        //public ActionResult EditDonNguoiDung(int IDND)
+        //{
          
 
-            return View(don);
-        }
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult EditDonNguoiDung(NOPDON don)
-        {
+        //    return View(don);
+        //}
+        //[HttpPost]
+        //[ValidateInput(false)]
+        //public ActionResult EditDonNguoiDung(NOPDON don)
+        //{
 
             
-        }
+        //}
     }
-}
 }
