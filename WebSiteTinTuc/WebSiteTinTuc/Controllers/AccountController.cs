@@ -28,7 +28,6 @@ namespace WebSiteTinTuc.Controllers
         public ActionResult DangKy(KHACHHANG kh, FormCollection f)
         {
 
-
             kh.Email = f["email"];
             kh.Password = f["matkhau"];
             kh.Repeat_Password = f["nhaplai"];
@@ -40,6 +39,7 @@ namespace WebSiteTinTuc.Controllers
 
 
             return RedirectToAction("TrangChu", "Home");
+
         }
         public ActionResult DangNhap()
         {
