@@ -81,28 +81,6 @@ namespace WebSiteTinTuc.Controllers
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
 
             }
-            if (ct != null)
-            {
-                if (ct.Tendangnhap == id && ct.Matkhau == sMatKhau && id == sTaiKhoan)
-                {
-
-                    ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công";
-                    Session["Tenct"] = ct.Tencongty;
-
-                    return RedirectToAction("TrangChuCongTy", "CongTy");
-                }
-
-                if (ct.Tendangnhap != id || ct.Matkhau != sMatKhau || id != sTaiKhoan)
-                {
-                    ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
-
-                }
-            }
-            if (ct == null)
-            {
-                ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
-
-            }
             if (ad != null)
             {
                 if (ad.Tendangnhap == id && ad.Matkhau == sMatKhau && id == sTaiKhoan)
@@ -124,6 +102,7 @@ namespace WebSiteTinTuc.Controllers
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
 
             }
+
             return View();
         }
         public ActionResult DangXuat()
