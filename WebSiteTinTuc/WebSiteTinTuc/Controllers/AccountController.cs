@@ -55,7 +55,8 @@ namespace WebSiteTinTuc.Controllers
             var nd = td.KHACHHANG.SingleOrDefault(x => x.Email == id);
             var ad = td.ADMIN.SingleOrDefault(x => x.Tendangnhap == id);
             var ct = td.CONGTY.SingleOrDefault(x => x.Tendangnhap == id);
-            if (nd != null)
+            /* */
+		if (nd != null)
             {
                 if (nd.Email == id && nd.Password == sMatKhau && id == sTaiKhoan)
                 {
@@ -81,6 +82,7 @@ namespace WebSiteTinTuc.Controllers
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
 
             }
+	/* */
             if (ct != null)
             {
                 if (ct.Tendangnhap == id && ct.Matkhau == sMatKhau && id == sTaiKhoan)
