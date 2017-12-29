@@ -16,8 +16,7 @@ namespace WebSiteTinTuc.Controllers
     public class AccountController : Controller
     {
         TUYENDUNGITEntities td = new TUYENDUNGITEntities();
-
-
+        //Sign up
         public ActionResult DangKy()
         {
             return View();
@@ -37,8 +36,6 @@ namespace WebSiteTinTuc.Controllers
             kh.SDT = f["sdt"];
             td.KHACHHANG.Add(kh);
             td.SaveChanges();
-
-
             return RedirectToAction("TrangChu", "Home");
         }
         public ActionResult DangNhap()
