@@ -161,8 +161,9 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         public ActionResult QuanLyTaiKhoanCongTy()
         {
-          
-            return View();
+            var ttct = td.CONGTY.ToList();
+            return View(ttct);
+     
         }
         [HttpGet]
         public ActionResult EditTaiKhoanCongTy(int IDCT)
@@ -198,9 +199,9 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         [HttpPost]
         public ActionResult ThemTaiKhoanCongTy(CONGTY ct)
-        {
-
-            return View();
+        {   td.CONGTY.Add(ct);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
         }
 
         [HttpGet]
