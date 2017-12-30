@@ -52,6 +52,28 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
             return Redirect("~/ADMIN/QuanLyAD/Xemtin");
         }
+        public ActionResult DangTin(int IDTT)
+        {
+            TinTuc tt = td.TinTucs.SingleOrDefault(n => n.IDTT == IDTT);
+            TinTucTuyenDung tttd = new TinTucTuyenDung();
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            tttd.TenCT = tt.TenCT;
+            tttd.Vitri = tt.Vitri;
+            tttd.Mucluong = tt.Mucluong;
+            tttd.Khuvuc = tt.Khuvuc;
+            tttd.Thoihan = tt.Thoihan;
+            tttd.Yeucau = tt.Yeucau;
+            tttd.Hinhanh = tt.Hinhanh;
+            td.TinTucTuyenDungs.Add(tttd);
+            td.TinTucs.Remove(tt);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/TrangChuAdmin");
+
+        }
         [HttpGet]
         public ActionResult Delete(int IDTT)
         {
