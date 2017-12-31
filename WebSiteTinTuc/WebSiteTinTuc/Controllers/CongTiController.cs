@@ -68,7 +68,14 @@ namespace WebSiteTinTuc.Controllers
         }
         public ActionResult DanhSachNguoiNop()
         {
-            return View();
+            string id = Session["Tenct"].ToString();
+            var nd = td.NOPDON.Where(x => x.CongTy == id).ToList();
+
+            //var ds = from c in td.DANHSACHDON
+            //         where c.TenCT == id
+            //         select c;
+            //return View(ds);
+            return View(nd);
         }
 
 
