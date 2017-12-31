@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +13,26 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         {
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult ThemTaiKhoanNguoiDung()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ThemTaiKhoanNguoiDung(KHACHHANG kh)
+        {
+            td.KHACHHANG.Add(kh);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
+        }
+        public ActionResult DanhSachNopDon() {
+            var ds = td.NOPDON.ToList();
+            return View(ds);
+        }
+
+	
+
     }
 }
