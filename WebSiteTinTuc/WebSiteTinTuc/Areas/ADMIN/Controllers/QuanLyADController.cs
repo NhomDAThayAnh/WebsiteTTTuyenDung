@@ -181,36 +181,74 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
            
             return View();
         }
+        public ActionResult QuanLyTaiKhoan()
+        {
+            return View();
+        }
+        public ActionResult QuanLyTaiKhoanNguoiDung()
+        {
+            var ttnd = td.KHACHHANG.ToList();
+            return View(ttnd);
+        }
         public ActionResult QuanLyTaiKhoanCongTy()
         {
             var ttct = td.CONGTY.ToList();
             return View(ttct);
-     
         }
         [HttpGet]
         public ActionResult EditTaiKhoanCongTy(int IDCT)
         {
-           
+            CONGTY ct = td.CONGTY.SingleOrDefault(n => n.IDCT == IDCT);
 
-            return View();
+            if (ct == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+            return View(ct);
         }
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditTaiKhoanCongTy(CONGTY ct)
         {
 
-            return View();
+            if (ModelState.IsValid)
+            {
+                //Thực hiện cập nhạp trong Model
+                td.Entry(ct).State = System.Data.Entity.EntityState.Modified;
+                td.SaveChanges();
+            }
+
+            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
         }
         [HttpGet]
         public ActionResult DeleteTaiKhoanCongTy(int IDCT)
         {
             //Lấy Đối tượng sách theo mã
-            return View();
+            CONGTY ct = td.CONGTY.SingleOrDefault(n => n.IDCT == IDCT);
+
+
+
+
+            if (ct == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(ct);
         }
         [HttpPost, ActionName("DeleteTaiKhoanCongTy")]
         public ActionResult XacNhanXoaTaiKhoanCongTy(int IDCT)
         {
-           
+            CONGTY ct = td.CONGTY.SingleOrDefault(n => n.IDCT == IDCT);
+            if (ct == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            td.CONGTY.Remove(ct);
+            td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
 
         }
@@ -221,11 +259,11 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         [HttpPost]
         public ActionResult ThemTaiKhoanCongTy(CONGTY ct)
-        {   td.CONGTY.Add(ct);
+        {
+            td.CONGTY.Add(ct);
             td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
         }
-
         [HttpGet]
         public ActionResult EditTaiKhoanNguoiDung(int IDND)
         {
