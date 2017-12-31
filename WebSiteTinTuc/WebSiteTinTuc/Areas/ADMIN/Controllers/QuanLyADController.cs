@@ -63,6 +63,34 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult EditTaiKhoanNguoiDung(int IDND)
+        {
+            KHACHHANG kh = td.KHACHHANG.SingleOrDefault(n => n.IDND == IDND);
+
+            if (kh == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+            return View(kh);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult EditTaiKhoanNguoiDung(KHACHHANG kh)
+        {
+
+            if (ModelState.IsValid)
+            {
+                //Th?c hi?n c?p nh?p trong Model
+                td.Entry(kh).State = System.Data.Entity.EntityState.Modified;
+                td.SaveChanges();
+            }
+
+            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
+        }
+
 	
 
     }
