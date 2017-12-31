@@ -27,11 +27,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
         }
-        public ActionResult DanhSachNopDon() {
-            var ds = td.NOPDON.ToList();
-            return View(ds);
-        }
-
+     
         [HttpGet]
         public ActionResult DeleteTaiKhoanNguoiDung(int IDND)
         {
