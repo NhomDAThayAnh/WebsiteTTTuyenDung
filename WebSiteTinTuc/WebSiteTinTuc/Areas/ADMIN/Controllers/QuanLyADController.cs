@@ -32,6 +32,37 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             return View(ds);
         }
 
+        [HttpGet]
+        public ActionResult DeleteTaiKhoanNguoiDung(int IDND)
+        {
+            //L?y ??i t??ng sách theo mã
+            KHACHHANG kh = td.KHACHHANG.SingleOrDefault(n => n.IDND == IDND);
+
+
+
+
+            if (kh == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(kh);
+        }
+        [HttpPost, ActionName("DeleteTaiKhoanNguoiDung")]
+        public ActionResult XacNhanXoaTaiKhoanNguoiDung(int IDND)
+        {
+            KHACHHANG kh = td.KHACHHANG.SingleOrDefault(n => n.IDND == IDND);
+            if (kh == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            td.KHACHHANG.Remove(kh);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
+
+        }
+
 	
 
     }
