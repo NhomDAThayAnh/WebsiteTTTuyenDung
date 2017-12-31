@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin</title>
+    <title>ADmin</title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i" rel="stylesheet">
     <!-- Bootstrap -->
@@ -27,45 +27,33 @@
             <!--side menu-->
 
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell valign-top" id="side-menu">
-                <h1 class="hidden-xs hidden-sm" style="color:white">Trang Admin</h1>
+                <h1 class="hidden-xs hidden-sm" style="color:white">Trang Công Ty</h1>
                 <ul>
-                    <li class="link">
-                        <a href="~/ADMIN/QuanLyAD/TrangChuAdmin">
-                            <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
-                            <span class="hidden-xs hidden-sm">Bảng Điều Khiển</span>
-                        </a>
-                    </li>
-                    <li class="link active">
-                        <a href="#collapse-post" data-toggle="collapse" aria-controls="collapse-post">
-                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                            <span class="hidden-xs hidden-sm">Tin tuyển dụng</span>
+                    @*<li class="link">
+                            <a href="~/ADMIN/QuanLyAD/TrangChuAdmin">
+                                <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                                <span class="hidden-xs hidden-sm">Bảng Điều Khiển</span>
+                            </a>
+                        </li>
+                        <li class="link active">
+                            <a href="#collapse-post" data-toggle="collapse" aria-controls="collapse-post">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                <span class="hidden-xs hidden-sm">Tin đã gửi</span>
+                                <span class="label label-success pull-right hidden-xs hidden-sm">20</span>
+                            </a>*@
+                    @*<ul class="collapse collapseable" id="collapse-post">
+                                <li>@Html.ActionLink("Xem tin", "Xemtin", "QuanlyAD", "ADMIN")</li>
 
-                        </a>
-                        <ul class="collapse collapseable" id="collapse-post">
-                            <li>@Html.ActionLink("Xem tin", "Xemtin", "QuanlyAD", "ADMIN")</li>
+                            </ul>
+                        </li>*@
+                    @*<li class="link">
+                            <a href="~/ADMIN/QuanLyAD/Tindadang">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="hidden-xs hidden-sm">Dang sách đơn đã nhận</span>
+                            </a>
+                        </li>*@
 
-                        </ul>
-                    </li>
-                    <li class="link">
-                        <a href="~/ADMIN/QuanLyAD/Tindadang">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span class="hidden-xs hidden-sm">Tin đã đăng</span>
-                        </a>
-                    </li>
 
-                    <li class="link">
-                        <a href="~/ADMIN/QuanLyAD/QuanLyTaiKhoan">
-                            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                            <span class="hidden-xs hidden-sm">Tài Khoản</span>
-                        </a>
-                    </li>
-
-                    <li class="link setting-btn">
-                        <a href="~/ADMIN/QuanLyAD/DanhSachNopDon">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                            <span class="hidden-xs hidden-sm">Danh sách nộp đơn</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-10 col-sm-11 display-table-cell ">
@@ -80,13 +68,30 @@
                                     <span class="icon-bar"></span>
                                 </button>
                             </nav>
-
+                            @*<input type="text" class="hidden-sm hidden-xs" id="header-search-field" placeholder="Seaching for ..." />*@
 
                         </div>
                         <div class="col-md-7">
                             <ul class="pull-right">
-                                <li id="chaomung" class="hidden-xs">Chào mừng tới trang Admin trang Admin</li>
+                                @if (@Session["Tenct"] != null)
+                                {
+                                    <li id="chaomung" class="hidden-xs">Xin Chào : @Session["Tenct"]</li>}
+                                @if (@Session["Tenct"] == null)
+                                {
+                                    <li id="chaomung" class="hidden-xs"></li>}
+                                @*<li class="fixed-width">
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                                            <span class="label label-warning">2</span>
+                                        </a>
+                                    </li>
 
+                                    <li class="fixed-width">
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                            <span class="label label-success">2</span>
+                                        </a>
+                                    </li>*@
 
                                 <li>
                                     <a href="~/Home/TrangChu" class="logout">
@@ -146,3 +151,6 @@
     </script>
 </body>
 </html>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+}

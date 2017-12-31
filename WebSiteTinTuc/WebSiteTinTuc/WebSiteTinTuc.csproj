@@ -200,6 +200,7 @@
     <Compile Include="Areas\ADMIN\ADMINAreaRegistration.cs" />
     <Compile Include="Areas\ADMIN\Controllers\QuanLyADController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CongTiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -253,6 +254,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dangnhap.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -283,6 +285,9 @@
     </Content>
     <Content Include="Areas\ADMIN\Views\web.config" />
     <Content Include="Areas\ADMIN\Views\QuanLyAD\TrangChuAdmin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Xemtin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Edit.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -335,6 +340,10 @@
     <Content Include="Views\Shared\_LayoutDangKi.cshtml" />
     <Content Include="Views\Account\DangNhap.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Home\TrangNopDon.cshtml" />
+    <Content Include="Views\CongTi\TrangChuCongTy.cshtml" />
+    <Content Include="Views\Shared\_layoutCongTy.cshtml" />
+    <Content Include="Views\CongTi\Tintuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
