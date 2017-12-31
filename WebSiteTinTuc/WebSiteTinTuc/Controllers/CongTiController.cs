@@ -10,7 +10,7 @@ namespace WebSiteTinTuc.Controllers
 {
     public class CongTiController : Controller
     {
-        // GET: CongTi //
+        // GET: CongTi /////////
         TUYENDUNGITEntities td = new TUYENDUNGITEntities();
         // GET: CongTy
         public ActionResult TrangChuCongTy()
