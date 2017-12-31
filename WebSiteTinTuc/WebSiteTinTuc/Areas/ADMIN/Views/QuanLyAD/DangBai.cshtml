@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "DangBai";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+<header>
+    <h2 class="page_title">Tạo tin tuyển dụng</h2>
+</header>
+<div class="content-inner">
+    <div class="form-wrapper">
+        <form>
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+                <label class="sr-only">Tiêu đề</label>
+                <input type="text" class="form-control" id="tieude" placeholder="Tiêu đề" />
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only">Tags</label>
+                <select data-placeholder="Select tags" multiple name="tags" class="form-control chosen-select">
+                    <option></option>
+                    <option>Html</option>
+                    <option>Css</option>
+                    <option>Coding</option>
+                    <option>Programing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only">Nội dung</label>
+                <textarea class="form-control summernote" placeholder="Nội dung" name="noidung"></textarea>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" />
+                    Post nội dung khi tôi save
+                </label>
+            </div>
+            <div class="clearfix">
+                <button type="submit" class="btn btn-primary pull-right"> Save </button>
+            </div>
+        </form>
+    </div>
+</div>
+

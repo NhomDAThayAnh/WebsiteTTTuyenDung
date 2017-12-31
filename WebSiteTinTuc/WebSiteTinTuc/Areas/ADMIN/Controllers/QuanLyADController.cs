@@ -109,7 +109,9 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpPost]
         public ActionResult Themtindadang(TinTucTuyenDung tt)
         {
-            return View();
+            td.TinTucTuyenDung.Add(tt);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/Tindadang");
         }
         public ActionResult QuanLyDonNop()
         {
@@ -122,32 +124,58 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         public ActionResult EditTinDaDang(int IDTT)
         {
-           
+            TinTucTuyenDung tt = td.TinTucTuyenDung.SingleOrDefault(n => n.IDTT == IDTT);
 
-            return View();
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+            return View(tt);
         }
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditTinDaDang(TinTucTuyenDung tt)
         {
 
+            if (ModelState.IsValid)
+            {
+                //Thực hiện cập nhạp trong Model
+                td.Entry(tt).State = System.Data.Entity.EntityState.Modified;
+                td.SaveChanges();
+            }
 
-            return View();
+            return Redirect("~/ADMIN/QuanLyAD/Tindadang");
         }
         [HttpGet]
         public ActionResult DeleteTinDaDang(int IDTT)
         {
             //Lấy Đối tượng sách theo mã
+            TinTucTuyenDung tt = td.TinTucTuyenDung.SingleOrDefault(n => n.IDTT == IDTT);
 
 
 
 
-            return View();
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(tt);
         }
         [HttpPost, ActionName("DeleteTinDaDang")]
         public ActionResult XacNhanXoaTinDaDang(int IDTT)
         {
-            return View();
+            TinTucTuyenDung tt = td.TinTucTuyenDung.SingleOrDefault(n => n.IDTT == IDTT);
+            if (tt == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            td.TinTucTuyenDung.Remove(tt);
+            td.SaveChanges();
+            return Redirect("~/ADMIN/QuanLyAD/Tindadang");
 
         }
         public ActionResult QuanLyTaiKhoan()

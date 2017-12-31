@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TUYENDUNGITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CONGTY">
+    <Key>
+      <PropertyRef Name="IDCT" />
+    </Key>
+    <Property Name="IDCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tendangnhap" Type="varchar" MaxLength="50" />
+    <Property Name="Matkhau" Type="varchar" MaxLength="50" />
+    <Property Name="Tencongty" Type="nvarchar" MaxLength="100" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="100" />
+    <Property Name="SDT" Type="char" MaxLength="13" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="IDND" />
+    </Key>
+    <Property Name="IDND" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tendangnhap" Type="varchar" MaxLength="50" />
+    <Property Name="Matkhau" Type="varchar" MaxLength="50" />
+    <Property Name="Holot" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngaysinh" Type="datetime" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="100" />
+    <Property Name="SDT" Type="char" MaxLength="13" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="TUYENDUNGITModelStoreContainer">
+    <EntitySet Name="CONGTY" EntityType="Self.CONGTY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

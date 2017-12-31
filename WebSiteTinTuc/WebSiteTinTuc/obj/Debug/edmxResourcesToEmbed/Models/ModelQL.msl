@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TUYENDUNGITModelStoreContainer" CdmEntityContainer="TUYENDUNGITEntities">
+    <EntitySetMapping Name="CONGTY">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.CONGTY">
+        <MappingFragment StoreEntitySet="CONGTY">
+          <ScalarProperty Name="IDCT" ColumnName="IDCT" />
+          <ScalarProperty Name="Tendangnhap" ColumnName="Tendangnhap" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tencongty" ColumnName="Tencongty" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGUOIDUNG">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.NGUOIDUNG">
+        <MappingFragment StoreEntitySet="NGUOIDUNG">
+          <ScalarProperty Name="IDND" ColumnName="IDND" />
+          <ScalarProperty Name="Tendangnhap" ColumnName="Tendangnhap" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Holot" ColumnName="Holot" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<DAWEB.Models.NOPDON>
+
+@{
+    ViewBag.Title = "DanhSachNopDon";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<h2>Danh Sách Tuyển Dụng</h2>
+
+
+<table class="table">
+    <tr>
+      
+       
+        <th>
+            @Html.DisplayNameFor(model => model.NguoiNop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongTy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vitri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hanchot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yeucau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gioithieubanthan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.NguoiNop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CongTy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vitri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hanchot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yeucau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gioithieubanthan)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "EditDonNguoiDung", new { @IDND = item.IDDon }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            
+        </td>
+    </tr>
+}
+
+</table>

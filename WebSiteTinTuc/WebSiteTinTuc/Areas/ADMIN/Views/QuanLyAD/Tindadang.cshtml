@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DAWEB.Models.TinTucTuyenDung>
+
+@{
+    ViewBag.Title = "Tindadang";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<h2>Tin đã đăng</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Themtindadang")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.TenCT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vitri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mucluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Khuvuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thoihan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yeucau)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.TenCT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vitri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mucluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Khuvuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thoihan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yeucau)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditTinDaDang", new { @IDTT = item.IDTT }) |
+            @Html.ActionLink("Delete", "DeleteTinDaDang", new { @IDTT = item.IDTT }) |
+          
+        </td>
+    </tr>
+}
+
+</table>

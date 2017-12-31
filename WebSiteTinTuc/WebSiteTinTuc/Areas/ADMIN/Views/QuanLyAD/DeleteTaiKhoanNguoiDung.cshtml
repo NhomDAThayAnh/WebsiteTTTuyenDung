@@ -1,0 +1,51 @@
+﻿@model DAWEB.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "DeleteTaiKhoanNguoiDung";
+    Layout = "~/Views/Shared/_layoutAdmin.cshtml";
+}
+
+
+
+<h3>Bạn có chắc muốn xóa tài khoản này ?</h3>
+<div>
+    <h4>KHACHHANG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repeat_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repeat_Password)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "QuanLyTaiKhoanNguoiDung")
+        </div>
+    }
+</div>

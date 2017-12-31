@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TUYENDUNGITModelStoreContainer" CdmEntityContainer="TUYENDUNGITEntities1">
+    <EntitySetMapping Name="CONGTY">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.CONGTY">
+        <MappingFragment StoreEntitySet="CONGTY">
+          <ScalarProperty Name="IDCT" ColumnName="IDCT" />
+          <ScalarProperty Name="Tendangnhap" ColumnName="Tendangnhap" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tencongty" ColumnName="Tencongty" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANG">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="IDND" ColumnName="IDND" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Repeat_Password" ColumnName="Repeat Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTucTuyenDung">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.TinTucTuyenDung">
+        <MappingFragment StoreEntitySet="TinTucTuyenDung">
+          <ScalarProperty Name="Yeucau" ColumnName="Yeucau" />
+          <ScalarProperty Name="Thoihan" ColumnName="Thoihan" />
+          <ScalarProperty Name="Khuvuc" ColumnName="Khuvuc" />
+          <ScalarProperty Name="Mucluong" ColumnName="Mucluong" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="TenCT" ColumnName="TenCT" />
+          <ScalarProperty Name="IDTT" ColumnName="IDTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMIN">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tendangnhap" ColumnName="Tendangnhap" />
+          <ScalarProperty Name="IDAD" ColumnName="IDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTuc">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="Yeucau" ColumnName="Yeucau" />
+          <ScalarProperty Name="NgayGui" ColumnName="NgayGui" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Thoihan" ColumnName="Thoihan" />
+          <ScalarProperty Name="Khuvuc" ColumnName="Khuvuc" />
+          <ScalarProperty Name="Mucluong" ColumnName="Mucluong" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="TenCT" ColumnName="TenCT" />
+          <ScalarProperty Name="IDTT" ColumnName="IDTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOPDON">
+      <EntityTypeMapping TypeName="TUYENDUNGITModel.NOPDON">
+        <MappingFragment StoreEntitySet="NOPDON">
+          <ScalarProperty Name="NguoiNop" ColumnName="NguoiNop" />
+          <ScalarProperty Name="NgayNop" ColumnName="NgayNop" />
+          <ScalarProperty Name="CongTy" ColumnName="CongTy" />
+          <ScalarProperty Name="IDTT" ColumnName="IDTT" />
+          <ScalarProperty Name="IDDon" ColumnName="IDDon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

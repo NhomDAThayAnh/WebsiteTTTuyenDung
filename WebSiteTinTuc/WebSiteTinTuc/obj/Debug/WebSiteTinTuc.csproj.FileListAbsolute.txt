@@ -81,3 +81,4 @@ C:\Users\Chung Thai\Documents\GitHub\DAThayAnh\WebsiteTTTuyenDung\WebSiteTinTuc\
 C:\Users\Chung Thai\Documents\GitHub\DAThayAnh\WebsiteTTTuyenDung\WebSiteTinTuc\WebSiteTinTuc\obj\Debug\WebSiteTinTuc.csprojResolveAssemblyReference.cache
 C:\Users\Chung Thai\Documents\GitHub\DAThayAnh\WebsiteTTTuyenDung\WebSiteTinTuc\WebSiteTinTuc\obj\Debug\WebSiteTinTuc.dll
 C:\Users\Chung Thai\Documents\GitHub\DAThayAnh\WebsiteTTTuyenDung\WebSiteTinTuc\WebSiteTinTuc\obj\Debug\WebSiteTinTuc.pdb
+D:\DoAn\20171229\WebsiteTTTuyenDung\WebSiteTinTuc\WebSiteTinTuc\obj\Debug\WebSiteTinTuc.csprojResolveAssemblyReference.cache

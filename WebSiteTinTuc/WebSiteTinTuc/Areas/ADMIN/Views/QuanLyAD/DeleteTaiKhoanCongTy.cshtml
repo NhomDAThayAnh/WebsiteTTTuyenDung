@@ -1,0 +1,75 @@
+﻿@model DAWEB.Models.CONGTY
+
+@{
+    ViewBag.Title = "DeleteTaiKhoanCongTy";
+    Layout = "~/Views/Shared/_layoutQuanLyTaiKhoan.cshtml";
+}
+
+
+
+<h3>Bạn có chắc muốn xóa tài khoản này?</h3>
+<div>
+    <h4>CONGTY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+     
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tendangnhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tendangnhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matkhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tencongty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tencongty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "QuanLyTaiKhoanCongTy")
+        </div>
+    }
+</div>
