@@ -1,17 +1,83 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Shared/_layoutdangki.cshtml";
 }
 
-<!DOCTYPE html>
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="main_about sections">
+                <div class="head_title text-center">
+                    <h2>TIN TỨC TUYỂN DỤNG</h2>
+                </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>KetQuaTimKiem</title>
-</head>
-<body>
-    <div> 
+                <div class="main_about_content_area">
+                    <p class="test"><b>Kết quả tìm kiếm</b></p>
+                    <p style="color:red">@ViewBag.ThongBao</p>
+                    @foreach (var item in Model)
+                    {
+
+
+                        <div class="container-fluid">
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-2" style="background-color:white;text-align:center;height:150px ">
+                                            <img src="~/assets/images/@item.Hinhanh" style="height:120px;" />
+                                        </div>
+                                        <div class="col-sm-7">
+
+
+                                            <table class="table table-hover">
+
+                                                <tr>
+                                                    <th>Vị trí</th>
+                                                    <th>Mức lương</th>
+                                                    <th>Khu vực</th>
+                                                    <th>Thời hạn</th>
+                                                    <th></th>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>@item.Vitri</td>
+                                                    <td>@item.Mucluong</td>
+                                                    <td>@item.Khuvuc</td>
+                                                    <td>@item.Thoihan</td>
+
+                                                    @*@if (@Session["TaiKhoan"] != null)
+                                                        {
+                                                            <td> @Html.ActionLink("Nộp đơn", "NopDon", new { @IDTT = item.IDTT }) </td>
+                                                        }
+                                                        @if (@Session["TaiKhoan"] == null)
+                                                        {*@
+                                                    <td>@Html.ActionLink("Nộp đơn", "TrangNopDon", new { @IDTT = item.IDTT })</td>
+                                                    @*}*@
+
+                                                </tr>
+
+
+                                            </table>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>Yêu cầu tuyển dụng</b>
+                                            <p>@item.Yeucau</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }              <!-- bar 1 -->
+
+                </div>
+
+
+
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</section>

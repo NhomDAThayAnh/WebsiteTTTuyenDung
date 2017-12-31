@@ -1,13 +1,16 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebSiteTinTuc.Models;
 
 namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 {
     public class QuanLyADController : Controller
     {
+        TUYENDUNGITEntities1 td = new TUYENDUNGITEntities1();
+
         // GET: ADMIN/QuanLyAD
         public ActionResult TrangChuAdmin()
         {
@@ -31,7 +34,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpGet]
         public ActionResult DeleteTaiKhoanNguoiDung(int IDND)
         {
-            //L?y ??i t??ng sách theo mã
+            //L?y ??i t??ng sï¿½ch theo mï¿½
             KHACHHANG kh = td.KHACHHANG.SingleOrDefault(n => n.IDND == IDND);
 
 

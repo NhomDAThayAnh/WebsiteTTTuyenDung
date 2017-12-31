@@ -60,12 +60,28 @@ namespace WebSiteTinTuc.Controllers
         }
         public ActionResult DonNguoiDung()
         {
-            return View();
+            string ht = Session["Tenkhachang"].ToString();
+            var ds = td.NOPDON.Where(x => x.NguoiNop == ht).ToList();
+            if (ds.Count != 0)
+            {
+                ViewBag.ThongBao = "Bạn không có nào";
+            }
+            ViewBag.ThongBao = "Bạn có " + ds.Count() + " đơn";
+            return View(ds);
         }
         public ActionResult KetQuaTimKiem(FormCollection f)
         {
 
-            return View();
+            string sTuKhoa = f["txtTimKiemban"].ToString();
+            var lstKQTK = td.TinTucTuyenDung.Where(n => n.Vitri.Contains(sTuKhoa)).ToList();
+            if (lstKQTK.Count == 0)
+            {
+                ViewBag.ThongBao = "Không tìm thấy vị trí bạn muốn tìm";
+                return View(td.TinTucTuyenDung.OrderBy(n => n.Vitri));
+
+            }
+            ViewBag.Thongbao = "Đã tìm thấy " + lstKQTK.Count() + " kết quả";
+            return View(lstKQTK.OrderBy(n => n.Vitri));
         }
         public ActionResult XoaDonNguoiDung(int IDTT)
         {
