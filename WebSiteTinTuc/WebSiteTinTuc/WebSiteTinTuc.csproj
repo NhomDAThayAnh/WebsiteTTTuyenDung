@@ -344,6 +344,7 @@
     <Content Include="Views\CongTi\TrangChuCongTy.cshtml" />
     <Content Include="Views\Shared\_layoutCongTy.cshtml" />
     <Content Include="Views\CongTi\Tintuc.cshtml" />
+    <Content Include="Views\CongTi\DanhSachNguoiNop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -66,6 +66,11 @@ namespace WebSiteTinTuc.Controllers
 
             return RedirectToAction("TrangChuCongTy", "CongTy");
         }
+        public ActionResult DanhSachNguoiNop()
+        {
+            return View();
+        }
+
 
     }
 }
