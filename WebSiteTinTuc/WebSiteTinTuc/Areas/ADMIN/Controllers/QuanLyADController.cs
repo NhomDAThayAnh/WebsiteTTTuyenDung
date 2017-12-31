@@ -172,24 +172,12 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             return View();
 
         }
+
         public ActionResult QuanLyTaiKhoan()
         {
             return View();
         }
-        public ActionResult QuanLyTaiKhoanNguoiDung()
-        {
-           
-            return View();
-        }
-        public ActionResult QuanLyTaiKhoan()
-        {
-            return View();
-        }
-        public ActionResult QuanLyTaiKhoanNguoiDung()
-        {
-            var ttnd = td.KHACHHANG.ToList();
-            return View(ttnd);
-        }
+  
         public ActionResult QuanLyTaiKhoanCongTy()
         {
             var ttct = td.CONGTY.ToList();
@@ -263,6 +251,11 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             td.CONGTY.Add(ct);
             td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanCongTy");
+        }
+        public ActionResult QuanLyTaiKhoanNguoiDung()
+        {
+            var ttnd = td.KHACHHANG.ToList();
+            return View(ttnd);
         }
         [HttpGet]
         public ActionResult EditTaiKhoanNguoiDung(int IDND)

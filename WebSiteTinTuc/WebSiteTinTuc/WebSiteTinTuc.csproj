@@ -291,6 +291,12 @@
     <Content Include="Models\ModelTD.edmx.diagram">
       <DependentUpon>ModelTD.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoan.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\EditTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\DeleteTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\ThemTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoanNguoiDung.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -351,6 +357,7 @@
     <Content Include="Views\Shared\_layoutdon.cshtml" />
     <Content Include="Views\Home\DonNguoiDung.cshtml" />
     <Content Include="Views\Home\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\Shared\_layoutQuanLyTaiKhoan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
