@@ -25,6 +25,7 @@ namespace WebSiteTinTuc.Controllers
         }
 
         [HttpPost]
+        //Đăng tin tuyển dụng
         //Set tin tuyen dung
         public ActionResult Tintuc(TinTuc tt, FormCollection f)
         {
