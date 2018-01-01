@@ -119,6 +119,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         {
             return View();
         }
+        //Xem tin đã đăng
         public ActionResult Tindadang()
         {
             var tt = td.TinTucTuyenDung.ToList();
