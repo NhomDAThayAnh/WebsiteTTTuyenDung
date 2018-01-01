@@ -52,8 +52,11 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
             return Redirect("~/ADMIN/QuanLyAD/Xemtin");
         }
+
+        //chức năng đăng tin
         public ActionResult DangTin(int IDTT)
         {
+            
             TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
             TinTucTuyenDung tttd = new TinTucTuyenDung();
             if (tt == null)
