@@ -14,7 +14,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             return View();
         }
 
-
+	// Chuc nang them tai khoan cua nguoi dung
         [HttpGet]
         public ActionResult ThemTaiKhoanNguoiDung()
         {
@@ -27,7 +27,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
         }
-     
+     	//Chuc nang delete tai khoan cua nguoi dung
         [HttpGet]
         public ActionResult DeleteTaiKhoanNguoiDung(int IDND)
         {
@@ -58,7 +58,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             return Redirect("~/ADMIN/QuanLyAD/QuanLyTaiKhoanNguoiDung");
 
         }
-
+	//Chuc nang cap nhat tai khoan cua nguoi dung
         [HttpGet]
         public ActionResult EditTaiKhoanNguoiDung(int IDND)
         {
