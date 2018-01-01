@@ -25,7 +25,7 @@ namespace WebSiteTinTuc.Controllers
         }
 
         [HttpPost]
-
+        //Set tin tuyen dung
         public ActionResult Tintuc(TinTuc tt, FormCollection f)
         {
             foreach (string fileUpload in Request.Files)
