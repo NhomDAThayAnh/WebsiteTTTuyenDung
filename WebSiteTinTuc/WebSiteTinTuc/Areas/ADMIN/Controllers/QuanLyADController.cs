@@ -156,6 +156,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
             return View();
         }
+       //thu hồi tin đã đăng
         [HttpGet]
         public ActionResult DeleteTinDaDang(int IDTT)
         {
@@ -166,6 +167,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
             return View();
         }
+        //thu hồi tin
         [HttpPost, ActionName("DeleteTinDaDang")]
         public ActionResult XacNhanXoaTinDaDang(int IDTT)
         {
