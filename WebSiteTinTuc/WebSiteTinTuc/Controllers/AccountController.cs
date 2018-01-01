@@ -38,6 +38,7 @@ namespace WebSiteTinTuc.Controllers
             td.SaveChanges();
             return RedirectToAction("TrangChu", "Home");
         }
+        //Tạo chức năng đăng nhập 
         public ActionResult DangNhap()
         {
             return View();
