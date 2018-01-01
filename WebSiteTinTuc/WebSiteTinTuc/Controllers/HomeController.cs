@@ -72,7 +72,7 @@ namespace WebSiteTinTuc.Controllers
         public ActionResult KetQuaTimKiem(FormCollection f)
         {
 
-            string sTuKhoa = f["txtTimKiemban"].ToString();
+            string sTuKhoa = f["txtTimKiem"].ToString();
             var lstKQTK = td.TinTucTuyenDung.Where(n => n.Vitri.Contains(sTuKhoa)).ToList();
             if (lstKQTK.Count == 0)
             {
@@ -85,14 +85,33 @@ namespace WebSiteTinTuc.Controllers
         }
         public ActionResult XoaDonNguoiDung(int IDTT)
         {
-            return View();
+            //Lấy Đối tượng sách theo mã
+            NOPDON don = td.NOPDON.SingleOrDefault(n => n.IDTT == IDTT);
+
+
+
+
+            if (don == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(don);
 
         }
         [HttpPost, ActionName("XoaDonNguoiDung")]
         public ActionResult XacNhanXoa(int IDTT)
         {
 
-            return View();
+            NOPDON don = td.NOPDON.SingleOrDefault(n => n.IDTT == IDTT);
+            if (don == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            td.NOPDON.Remove(don);
+            td.SaveChanges();
+            return Redirect("~/Home/DonNguoiDung");
         }
 
     }
