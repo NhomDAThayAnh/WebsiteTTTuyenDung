@@ -181,6 +181,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
            
             return View();
         }
+        //Get company account
         public ActionResult QuanLyTaiKhoanCongTy()
         {
             var ttct = td.CONGTY.ToList();
