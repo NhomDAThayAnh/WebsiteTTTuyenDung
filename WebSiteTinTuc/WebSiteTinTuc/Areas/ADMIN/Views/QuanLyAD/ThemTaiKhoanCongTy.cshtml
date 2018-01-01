@@ -1,4 +1,4 @@
-@model DAWEB.Models.CONGTY
+﻿@model DAWEB.Models.CONGTY
 
 @{
     ViewBag.Title = "ThemTaiKhoanCongTy";
@@ -7,15 +7,15 @@
 
 <h2>Thêm tài khoản công ty</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4 style="text-align:center">Thêm tài khoản công ty</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-      
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Tendangnhap, htmlAttributes: new { @class = "control-label col-md-2" })

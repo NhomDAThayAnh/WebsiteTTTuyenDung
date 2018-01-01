@@ -1,4 +1,4 @@
-@model IEnumerable<DAWEB.Models.CONGTY>
+﻿@model IEnumerable<WebSiteTinTuc.Models.CONGTY>
 
 @{
     ViewBag.Title = "QuanLyTaiKhoanCongTy";
@@ -12,7 +12,7 @@
 </p>
 <table class="table">
     <tr>
-       
+
         <th>
             @Html.DisplayNameFor(model => model.Tendangnhap)
         </th>
@@ -34,33 +34,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-      
-        <td>
-            @Html.DisplayFor(modelItem => item.Tendangnhap)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Matkhau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tencongty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diachi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SDT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditTaiKhoanCongTy", new { @IDCT = item.IDCT }) |
-            @Html.ActionLink("Delete", "DeleteTaiKhoanCongTy", new { @IDCT = item.IDCT }) 
-           
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tendangnhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tencongty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTaiKhoanCongTy", new { @IDCT = item.IDCT }) |
+                @Html.ActionLink("Delete", "DeleteTaiKhoanCongTy", new { @IDCT = item.IDCT })
+
+            </td>
+        </tr>
+    }
 
 </table>
