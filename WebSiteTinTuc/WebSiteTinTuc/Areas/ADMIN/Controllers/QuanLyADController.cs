@@ -31,6 +31,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpGet]
         public ActionResult Edit(int IDTT)
         {
+             
             TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
 
             if (tt == null)
@@ -58,6 +59,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpGet]
         public ActionResult Delete(int IDTT)
         {
+            //Tạo chức năng xóa tin 
             //Lấy Đối tượng sách theo mã
             TinTuc tt = td.TinTuc.SingleOrDefault(n => n.IDTT == IDTT);
 
