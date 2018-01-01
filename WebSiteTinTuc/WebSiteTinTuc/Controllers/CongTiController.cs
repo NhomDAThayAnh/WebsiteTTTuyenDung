@@ -66,6 +66,7 @@ namespace WebSiteTinTuc.Controllers
 
             return RedirectToAction("TrangChuCongTy", "CongTy");
         }
+        /// Danh sach nguoi nop don
         public ActionResult DanhSachNguoiNop()
         {
             string id = Session["Tenct"].ToString();
