@@ -9,7 +9,7 @@ namespace WebSiteTinTuc.Controllers
 {
     public class HomeController : Controller
     {
-
+        //get model
          TUYENDUNGITEntities td = new TUYENDUNGITEntities();
       
 
