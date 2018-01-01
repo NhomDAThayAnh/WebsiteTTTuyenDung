@@ -13,7 +13,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         {
             return View();
         }
-
+	//Quan ly user
 	// Chuc nang them tai khoan cua nguoi dung
         [HttpGet]
         public ActionResult ThemTaiKhoanNguoiDung()
