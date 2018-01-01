@@ -52,6 +52,8 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
 
             return Redirect("~/ADMIN/QuanLyAD/Xemtin");
         }
+
+        //Xoá tin tức
         [HttpGet]
         public ActionResult Delete(int IDTT)
         {
@@ -164,6 +166,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             }
             return View(tt);
         }
+        //xoa tin da dang
         [HttpPost, ActionName("DeleteTinDaDang")]
         public ActionResult XacNhanXoaTinDaDang(int IDTT)
         {
