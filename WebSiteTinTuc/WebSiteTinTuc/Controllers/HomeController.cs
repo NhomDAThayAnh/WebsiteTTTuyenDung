@@ -12,7 +12,7 @@ namespace WebSiteTinTuc.Controllers
 
          TUYENDUNGITEntities1 td = new TUYENDUNGITEntities1();
       
-
+        //a
         public ActionResult TrangChu() {
             var tt = td.TinTucTuyenDung.ToList();
             ViewBag.CanhBao = "Bạn phải đăng nhập mới có thể nộp đơn";
