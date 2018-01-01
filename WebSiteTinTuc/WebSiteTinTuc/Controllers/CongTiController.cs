@@ -11,7 +11,7 @@ namespace WebSiteTinTuc.Controllers
     public class CongTiController : Controller
     {
         // GET: CongTi
-        TUYENDUNGITEntities td = new TUYENDUNGITEntities();
+        TUYENDUNGITEntities1 td = new TUYENDUNGITEntities1();
         // GET: CongTy
         public ActionResult TrangChuCongTy()
         {
