@@ -124,6 +124,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
             var tt = td.TinTucTuyenDung.ToList();
             return View(tt);
         }
+        //Sửa tin đã đăng
         public ActionResult EditTinDaDang(int IDTT)
         {
             TinTucTuyenDung tt = td.TinTucTuyenDung.SingleOrDefault(n => n.IDTT == IDTT);
