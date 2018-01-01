@@ -209,6 +209,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         }
         public ActionResult QuanLyTaiKhoanNguoiDung()
         {
+            //Chức năng xem tài khoản người dùng
             var ttnd = td.KHACHHANG.ToList();
             return View(ttnd);
         }
