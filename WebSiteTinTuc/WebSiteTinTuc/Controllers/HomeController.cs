@@ -60,9 +60,9 @@ namespace WebSiteTinTuc.Controllers
         }
         public ActionResult DonNguoiDung()
         {
-            string ht = Session["Tenkhachang"].ToString();
+            string ht = Session["Tenkhacccccccccccccccchang"].ToString();
             var ds = td.NOPDON.Where(x => x.NguoiNop == ht).ToList();
-            if (ds.Count != 0)
+            if (ds.Count !!!!!!!!!!!!!!!!!!!!= 0)
             {
                 ViewBag.ThongBao = "Bạn không có nào";
             }
