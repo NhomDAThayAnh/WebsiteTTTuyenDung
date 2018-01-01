@@ -34,7 +34,7 @@ namespace WebSiteTinTuc.Controllers
             string sEmail = f.Get("email").ToString();
             string sSDT = f.Get("sdt").ToString();
             string sGT = f.Get("message").ToString();
-
+            // commit nop don
             Session["sNguoiNop"] = sNguoiNop;
             Session["sEmail"] = sEmail;
             Session["sSDT"] = sSDT;
