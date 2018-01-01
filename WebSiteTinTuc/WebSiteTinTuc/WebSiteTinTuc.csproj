@@ -252,9 +252,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ad.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dangnhap.css" />
+    <Content Include="Content\tuyendung.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -269,6 +271,7 @@
       <DependentUpon>ModelTD.edmx</DependentUpon>
       <LastGenOutput>ModelTD.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -276,6 +279,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\ADMIN\Views\web.config" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\TrangChuAdmin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Xemtin.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Edit.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\Delete.cshtml" />
     <EntityDeploy Include="Models\ModelTD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelTD.Designer.cs</LastGenOutput>
@@ -283,11 +291,12 @@
     <Content Include="Models\ModelTD.edmx.diagram">
       <DependentUpon>ModelTD.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\ADMIN\Views\web.config" />
-    <Content Include="Areas\ADMIN\Views\QuanLyAD\TrangChuAdmin.cshtml" />
-    <Content Include="Areas\ADMIN\Views\QuanLyAD\Xemtin.cshtml" />
-    <Content Include="Areas\ADMIN\Views\QuanLyAD\Edit.cshtml" />
-    <Content Include="Areas\ADMIN\Views\QuanLyAD\Delete.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoan.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\EditTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\DeleteTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\ThemTaiKhoanCongTy.cshtml" />
+    <Content Include="Areas\ADMIN\Views\QuanLyAD\QuanLyTaiKhoanNguoiDung.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -344,12 +353,22 @@
     <Content Include="Views\CongTi\TrangChuCongTy.cshtml" />
     <Content Include="Views\Shared\_layoutCongTy.cshtml" />
     <Content Include="Views\CongTi\Tintuc.cshtml" />
+    <Content Include="Views\CongTi\DanhSachNguoiNop.cshtml" />
+    <Content Include="Views\Shared\_layoutdon.cshtml" />
+    <Content Include="Views\Home\DonNguoiDung.cshtml" />
+    <Content Include="Views\Home\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\Shared\_layoutQuanLyTaiKhoan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ADMIN\Models\" />
     <Folder Include="Areas\ADMIN\Views\Shared\" />
     <Folder Include="assets\" />
+    <Folder Include="Content\chosse\" />
+    <Folder Include="Content\fontawe\" />
+    <Folder Include="Content\summernote-master\" />
+    <Folder Include="cssdangnhap\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
