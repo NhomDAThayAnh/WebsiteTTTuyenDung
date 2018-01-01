@@ -58,6 +58,7 @@ namespace WebSiteTinTuc.Controllers
 
             return RedirectToAction("TrangChu", "Home");
         }
+        //Get don nguoi dung
         public ActionResult DonNguoiDung()
         {
             string ht = Session["Tenkhachhang"].ToString();
