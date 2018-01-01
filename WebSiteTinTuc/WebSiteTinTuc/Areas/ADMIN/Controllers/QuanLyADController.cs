@@ -121,6 +121,7 @@ namespace WebSiteTinTuc.Areas.ADMIN.Controllers
         [HttpPost]
         public ActionResult Themtintuc(TinTuc tt)
         {
+            //Thiết kế chức năng tạo tin mới 
             td.TinTuc.Add(tt);
             td.SaveChanges();
             return Redirect("~/ADMIN/QuanLyAD/Xemtin");
