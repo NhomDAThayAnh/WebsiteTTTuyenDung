@@ -15,9 +15,8 @@ namespace WebSiteTinTuc.Controllers
   
     public class AccountController : Controller
     {
-        TUYENDUNGITEntities td = new TUYENDUNGITEntities();
-
-
+        TUYENDUNGITEntities1 td = new TUYENDUNGITEntities1();
+        //Sign up
         public ActionResult DangKy()
         {
             return View();
@@ -37,8 +36,6 @@ namespace WebSiteTinTuc.Controllers
             kh.SDT = f["sdt"];
             td.KHACHHANG.Add(kh);
             td.SaveChanges();
-
-
             return RedirectToAction("TrangChu", "Home");
 
         }
@@ -55,7 +52,33 @@ namespace WebSiteTinTuc.Controllers
             var nd = td.KHACHHANG.SingleOrDefault(x => x.Email == id);
             var ad = td.ADMIN.SingleOrDefault(x => x.Tendangnhap == id);
             var ct = td.CONGTY.SingleOrDefault(x => x.Tendangnhap == id);
-           
+
+            if (nd != null)
+            {
+                if (nd.Email == id && nd.Password == sMatKhau && id == sTaiKhoan)
+                {
+
+                    ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công";
+                    Session["TaiKhoan"] = sTaiKhoan;
+                    Session["Tenkhachhang"] = nd.HoTen;
+                    Session["Emailnd"] = nd.Email;
+                    Session["SDT"] = nd.SDT;
+
+                    return RedirectToAction("TrangChu", "Home");
+                }
+
+                if (nd.Email != id || nd.Password != sMatKhau || id != sTaiKhoan)
+                {
+                    ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
+
+                }
+            }
+
+            if (nd == null)
+            {
+                ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
+
+            }
             if (ct != null)
             {
                 if (ct.Tendangnhap == id && ct.Matkhau == sMatKhau && id == sTaiKhoan)
@@ -78,7 +101,28 @@ namespace WebSiteTinTuc.Controllers
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
 
             }
-           
+            if (ad != null)
+            {
+                if (ad.Tendangnhap == id && ad.Matkhau == sMatKhau && id == sTaiKhoan)
+                {
+                    ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công";
+
+
+                    return Redirect("~/ADMIN/QuanLyAD/TrangChuAdmin");
+                }
+
+                if (ad.Tendangnhap != id || ad.Matkhau != sMatKhau || id != sTaiKhoan)
+                {
+                    ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
+
+                }
+            }
+            if (ad == null)
+            {
+                ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng";
+
+            }
+
             return View();
         }
         public ActionResult DangXuat()
