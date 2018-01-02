@@ -25,6 +25,7 @@ namespace WebSiteTinTuc.Controllers
         [Authorize]
         [ValidateAntiForgeryToken]
         [HttpPost]
+        //Chuc nang dang ky
         public ActionResult DangKy(KHACHHANG kh, FormCollection f)
         {
 
