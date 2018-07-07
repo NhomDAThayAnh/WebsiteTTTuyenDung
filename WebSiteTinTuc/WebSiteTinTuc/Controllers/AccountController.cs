@@ -24,9 +24,9 @@ namespace WebSiteTinTuc.Controllers
         [Authorize]
         [ValidateAntiForgeryToken]
         [HttpPost]
+        //Chuc nang dang ky
         public ActionResult DangKy(KHACHHANG kh, FormCollection f)
         {
-
 
             kh.Email = f["email"];
             kh.Password = f["matkhau"];
@@ -37,6 +37,7 @@ namespace WebSiteTinTuc.Controllers
             td.KHACHHANG.Add(kh);
             td.SaveChanges();
             return RedirectToAction("TrangChu", "Home");
+
         }
         public ActionResult DangNhap()
         {

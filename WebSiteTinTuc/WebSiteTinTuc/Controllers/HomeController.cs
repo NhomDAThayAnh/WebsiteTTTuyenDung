@@ -58,6 +58,7 @@ namespace WebSiteTinTuc.Controllers
 
             return RedirectToAction("TrangChu", "Home");
         }
+        //Xem lich su ho so da nop
         public ActionResult DonNguoiDung()
         {
             string ht = Session["Tenkhachhang"].ToString();
@@ -83,6 +84,7 @@ namespace WebSiteTinTuc.Controllers
             ViewBag.Thongbao = "Đã tìm thấy " + lstKQTK.Count() + " kết quả";
             return View(lstKQTK.OrderBy(n => n.Vitri));
         }
+        //Chuc nang huy ho so da nop
         public ActionResult XoaDonNguoiDung(int IDTT)
         {
             //Lấy Đối tượng sách theo mã
